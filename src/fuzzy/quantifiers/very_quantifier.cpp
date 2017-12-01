@@ -7,7 +7,7 @@ namespace fluffy_logic
 {
 	namespace fuzzy
 	{
-		float very_t::conform(const float value)
+		float very_t::conform(const float value) const
 		{
 			return std::pow(value, 2.);
 		}

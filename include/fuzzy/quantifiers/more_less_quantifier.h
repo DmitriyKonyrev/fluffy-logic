@@ -10,8 +10,10 @@ namespace fluffy_logic
 		class more_less_t : public quantifier_t
 		{
 		public:
-			float conform(const float value);
+			float conform(const float value) const;
 		};
+
+		const more_less_t MORE_LESS = more_less_t();
 	}
 }
 

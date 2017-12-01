@@ -10,8 +10,10 @@ namespace fluffy_logic
 		class very_t : public quantifier_t
 		{
 		public:
-			float conform(const float value);
+			float conform(const float value) const;
 		};
+
+		const very_t VERY = very_t();
 	}
 }
 

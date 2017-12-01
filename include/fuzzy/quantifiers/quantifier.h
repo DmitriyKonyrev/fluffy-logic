@@ -8,7 +8,9 @@ namespace fluffy_logic
 	    class quantifier_t
 		{
 		public:
-			virtual float conform(const float value) = 0;
+			virtual float conform(const float value) const = 0;
+
+			float operator()(const float value) const;
 		};
 	}
 }

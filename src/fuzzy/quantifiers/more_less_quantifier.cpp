@@ -8,7 +8,7 @@ namespace fluffy_logic
 {
 	namespace fuzzy
 	{
-		float more_less_t::conform(const float value)
+		float more_less_t::conform(const float value) const
 		{
 			if (value < 0)
 				throw std::domain_error("More-less quantifier doesn\'t work with negative");

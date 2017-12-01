@@ -10,8 +10,10 @@ namespace fluffy_logic
 		class not_t : public quantifier_t
 		{
 		public:
-			float conform(const float value);
+			float conform(const float value) const;
 		};
+
+		const not_t NOT = not_t();
 	}
 }
 

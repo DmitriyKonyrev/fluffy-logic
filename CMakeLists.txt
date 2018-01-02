@@ -21,4 +21,6 @@ set(GLOBAL_PROJECT_SOURCE_DIR "${PROJECT_SOURCE_DIR}")
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
 
+find_package (Boost COMPONENTS unit_test_framework REQUIRED)
+
 add_subdirectory(src)

@@ -21,8 +21,16 @@ PUBLIC
 	"${CMAKE_CURRENT_INCLUDE_DIR}"
 )
 
+file(GLOB_RECURSE TESTS_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp")
+find_package (Boost COMPONENTS unit_test_framework REQUIRED)
+
+include_directories(${Boost_INCLUDE_DIRS})
+set(TEST test_${PROJECT_NAME})
+add_executable (${TEST} ${TESTS_SOURCES})
+target_link_libraries (${TEST} ${PROJECT_NAME} ${Boost_LIBRARIES})
+
 TARGET_LINK_LIBRARIES(
-		fuzzy_variables
+		${PROJECT_NAME}
 		fuzzy_quantifiers
 )
 
@@ -32,3 +40,6 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
     COMPILE_DEFINITIONS "_USE_MATH_DEFINES;"
     LINKER_LANGUAGE CXX
 )
+
+enable_testing ()
+add_test (${TEST} ${TEST})
